@@ -6,7 +6,7 @@ export const useGetData = () => {
   const db = firebase.firestore()
 
   useEffect(() => {
-    db.collection('values')
+    db.collection('engineers')
       .get()
       .then((querySnapshot) => {
         let arr = [];
@@ -14,7 +14,7 @@ export const useGetData = () => {
           arr.push({ id: doc.id, value: doc.data() })
         )
         setDocuments(arr);
-      });
-  }, [db]);
+      })
+  }, [db])
   return [documents]
 }

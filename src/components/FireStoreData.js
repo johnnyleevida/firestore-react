@@ -5,13 +5,13 @@ const FireStoreData = () => {
   const [documents] = useGetData()
   return (
     <div>
-      <strong>Values:</strong>
-      {documents.map((document) => (
-        <div key={document.id}>
-          <div>
-            Document: {document.id} / Value: {document.value.value}
-          </div>
-        </div>
+      <strong>Engineers:</strong>
+      {documents.map((eng) => (
+        <ul key={eng.id}>
+          <li>
+            {eng.value.firstName} {eng.value.lastName} ({eng.value.title})
+          </li>
+        </ul>
       ))}
     </div>
   )
