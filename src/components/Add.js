@@ -12,9 +12,10 @@ const Add = () => {
   const getTitle = (e) => setTitle(e.target.value)
 
   const addValue = () => {
+    const email = `${firstName.toLowerCase()}.${lastName.toLowerCase()}@vida.com`
     db.collection('engineers')
       .doc(`${lastName}_${firstName}`)
-      .set({ firstName, lastName, title})
+      .set({ firstName, lastName, title, email })
       .then(function() { console.log('Value successfully written!') })
       .catch(function(err) { console.error("Error writing Value: ", err) })
   }

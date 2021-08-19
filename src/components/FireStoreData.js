@@ -6,13 +6,18 @@ const FireStoreData = () => {
   return (
     <div>
       <strong>Engineers:</strong>
-      {documents.map((eng) => (
-        <ul key={eng.id}>
-          <li>
-            {eng.value.firstName} {eng.value.lastName} ({eng.value.title})
-          </li>
-        </ul>
-      ))}
+      {documents.map(
+        (eng) => {
+          const value = eng.value
+          return (
+            <ul key={eng.id}>
+              <li>
+                <a href={`mailto:${value.email}`}>{value.firstName} {value.lastName}</a> ({value.title})
+              </li>
+            </ul>
+          )
+        }
+      )}
     </div>
   )
 }
