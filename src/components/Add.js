@@ -7,14 +7,12 @@ const Add = () => {
     const [title, setTitle] = React.useState('')
     const db = firebase.firestore()
 
-  const getFirstName = (e) => setFirstName(e.target.value)
-  const getLastName = (e) => setLastName(e.target.value)
-  const getTitle = (e) => setTitle(e.target.value)
-
-  const trimStr = (str) => str.toLowerCase().trim()
+  const getFirstName = (e) => setFirstName(e.target.value.trim())
+  const getLastName = (e) => setLastName(e.target.value.trim())
+  const getTitle = (e) => setTitle(e.target.value.trim())
 
   const addValue = () => {
-    const email = `${trimStr(firstName)}.${trimStr(lastName)}@vida.com`
+    const email = `${firstName.toLowerCase()}.${lastName.toLowerCase()}@vida.com`
     db.collection('engineers')
       .doc(email)
       .set({ firstName, lastName, title })
