@@ -2,10 +2,10 @@ import React from 'react'
 import firebase from 'firebase'
 
 const Add = () => {
-    const [firstName, setFirstName] = React.useState('')
-    const [lastName, setLastName] = React.useState('')
-    const [title, setTitle] = React.useState('')
-    const db = firebase.firestore()
+  const [firstName, setFirstName] = React.useState('')
+  const [lastName, setLastName] = React.useState('')
+  const [title, setTitle] = React.useState('')
+  const db = firebase.firestore()
 
   const getFirstName = (e) => setFirstName(e.target.value.trim())
   const getLastName = (e) => setLastName(e.target.value.trim())
