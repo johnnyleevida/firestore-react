@@ -11,8 +11,10 @@ const Add = () => {
   const getLastName = (e) => setLastName(e.target.value)
   const getTitle = (e) => setTitle(e.target.value)
 
+  const trimStr = (str) => str.toLowerCase().trim()
+
   const addValue = () => {
-    const email = `${firstName.toLowerCase()}.${lastName.toLowerCase()}@vida.com`
+    const email = `${trimStr(firstName)}.${trimStr(lastName)}@vida.com`
     db.collection('engineers')
       .doc(email)
       .set({ firstName, lastName, title })
