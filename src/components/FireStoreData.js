@@ -8,11 +8,11 @@ const FireStoreData = () => {
       <strong>Engineers:</strong>
       {documents.map(
         (eng) => {
-          const value = eng.value
+          const val = eng.value
           return (
             <ul key={eng.id}>
               <li>
-                <a href={`mailto:${value.email}`}>{value.firstName} {value.lastName}</a> ({value.title})
+                <a href={`mailto:${eng.id}`}>{val.firstName} {val.lastName}</a> ({val.title})
               </li>
             </ul>
           )

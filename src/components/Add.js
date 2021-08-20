@@ -14,8 +14,8 @@ const Add = () => {
   const addValue = () => {
     const email = `${firstName.toLowerCase()}.${lastName.toLowerCase()}@vida.com`
     db.collection('engineers')
-      .doc(`${lastName}_${firstName}`)
-      .set({ firstName, lastName, title, email })
+      .doc(email)
+      .set({ firstName, lastName, title })
       .then(function() { console.log('Value successfully written!') })
       .catch(function(err) { console.error("Error writing Value: ", err) })
   }
